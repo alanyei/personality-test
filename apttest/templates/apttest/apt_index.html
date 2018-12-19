@@ -1,0 +1,194 @@
+{% load static %}
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>APT test</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="{% static 'css/apttest.css' %}">
+    </head>
+    <body>
+        <form method='post'>
+        {% csrf_token %}
+            <div class="page-header">
+                <h1><a>人格特質自我診斷</a></h1>
+就以下32題的內容，由a或b選出較能正確描述你平常行為的選項，如果兩者的敘述都非常接近你的行為，仍須選擇較為接近者，本問卷不計分數，請仔細回答。
+            </div>
+
+            <div class="info">
+                {{ user_form.as_p }}
+            </div>
+            <p>
+            <hr>
+
+            <div class="questions">
+                {{ question_form.as_table }}
+
+                <h4>Q1. 我比較喜歡面對的問題是</h4>
+                <input type="radio" name="q1" value="a">a. 嶄新而且複雜的問題<br>
+                <input type="radio" name="q1" value="b">b. 過去曾處理過的問題<br>
+                <br>
+
+                <h4>Q2. 我的偏好是</h4>
+                <input type="radio" name="q2" value="a">a. 在安靜的地方自己一個人工作<br>
+                <input type="radio" name="q2" value="b">b. 與任務小組一同工作<br>
+                <br>
+
+                <h4>Q3. 我希望的主管是</h4>
+                <input type="radio" name="q3" value="a">a. 決策時清楚設定標準並確實執行<br>
+                <input type="radio" name="q3" value="b">b. 關心個別的需求並能視情況允許例外<br>
+                <br>
+
+                <h4>Q4. 當我執行專案時</h4>
+                <input type="radio" name="q4" value="a">a. 傾向盡快完成予以結案<br>
+                <input type="radio" name="q4" value="b">b. 常會保留彈性以因應可能的變化<br>
+                <br>
+
+                <h4>Q5. 決策時我考量的最重要因素是</h4>
+                <input type="radio" name="q5" value="a">a. 合理的想法、意見及資料數據<br>
+                <input type="radio" name="q5" value="b">b. 價值與他人的感受<br>
+                <br>
+
+                <h4>Q6. 參與專案時我傾向</h4>
+                <input type="radio" name="q6" value="a">a. 反覆思考再決定如何進行<br>
+                <input type="radio" name="q6" value="b">b. 立即行動，邊執行邊思考如何進行<br>
+                <br>
+
+                <h4>Q7. 我比較喜歡執行專案時</h4>
+                <input type="radio" name="q7" value="a">a. 盡可能地提高掌握程度<br>
+                <input type="radio" name="q7" value="b">b. 探詢各種可能的選擇<br>
+                <br>
+
+                <h4>Q8. 工作時我偏好</h4>
+                <input type="radio" name="q8" value="a">a. 同時參與數個專案，並盡可能地行各專案學習<br>
+                <input type="radio" name="q8" value="b">b. 只加入一個極具挑戰性且工作繁忙的專案<br>
+                <br>
+
+                <h4>Q9. 我通常</h4>
+                <input type="radio" name="q9" value="a">a. 開始做一件事之前會先規畫並列出工作項目，而且討厭大幅變更我的計畫<br>
+                <input type="radio" name="q9" value="b">b. 避免事先規畫，採取行動後讓任務自然推展<br>
+                <br>
+
+                <h4>Q10. 與同事討論問題時，我比較能夠</h4>
+                <input type="radio" name="q10" value="a">a. 站在全面性的觀點<br>
+                <input type="radio" name="q10" value="b">b. 掌握特定的細節<br>
+                <br>
+
+                <h4>Q11. 辦公室或家中電話響起時，我通常</h4>
+                <input type="radio" name="q11" value="a">a. 視為干擾<br>
+                <input type="radio" name="q11" value="b">b. 隨手接起電話<br>
+                <br>
+
+                <h4>Q12. 比較適合描述我的辭彙是</h4>
+                <input type="radio" name="q12" value="a">a. 分析型的<br>
+                <input type="radio" name="q12" value="b">b. 具有同理心<br>
+                <br>
+
+                <h4>Q13. 當我做執行工作時，傾向於</h4>
+                <input type="radio" name="q13" value="a">a. 穩定而持續地執行<br>
+                <input type="radio" name="q13" value="b">b. 有衝勁時多做一些，低落時暫停執行<br>
+                <br>
+
+                <h4>Q14. 當別人談論某個主題時，通常我會試著</h4>
+                <input type="radio" name="q14" value="a">a. 連結過去的經驗並思考是否相符<br>
+                <input type="radio" name="q14" value="b">b. 分析並評估對方所傳遞的訊息<br>
+                <br>
+
+                <h4>Q15. 一般來說，有新想法時我會</h4>
+                <input type="radio" name="q15" value="a">a. 大膽嘗試<br>
+                <input type="radio" name="q15" value="b">b. 再三斟酌此想法<br>
+                <br>
+
+                <h4>Q16. 執行專案時我比較喜歡</h4>
+                <input type="radio" name="q16" value="a">a. 縮小範圍以便能清楚界定<br>
+                <input type="radio" name="q16" value="b">b. 擴大範圍以包含相關項目<br>
+                <br>
+
+                <h4>Q17. 閱讀時我通常</h4>
+                <input type="radio" name="q17" value="a">a. 以文字內容設定思考範圍<br>
+                <input type="radio" name="q17" value="b">b. 思考字裡行間的意義並與其他想法連結<br>
+                <br>
+
+                <h4>Q18. 當我必須很快的決定</h4>
+                <input type="radio" name="q18" value="a">a. 我感到不安並希望可以獲得更多資訊<br>
+                <input type="radio" name="q18" value="b">b. 我能夠以現有的資料來決定<br>
+                <br>
+
+                <h4>Q19. 在會議中我傾向</h4>
+                <input type="radio" name="q19" value="a">a. 一邊發言，一邊整理我的論點<br>
+                <input type="radio" name="q19" value="b">b. 仔細思考完該議題後才會發言<br>
+                <br>
+
+                <h4>Q20. 工作時我將大部分的時間用來處理</h4>
+                <input type="radio" name="q20" value="a">a. 意見與構想<br>
+                <input type="radio" name="q20" value="b">b. 與人相關的部分<br>
+                <br>
+
+                <h4>Q21. 會議中我最無法忍受的行為是</h4>
+                <input type="radio" name="q21" value="a">a. 提出許多粗略不完整的想法<br>
+                <input type="radio" name="q21" value="b">b. 討論實際的細節而拖延會議的進度<br>
+                <br>
+
+                <h4>Q22. 我習慣</h4>
+                <input type="radio" name="q22" value="a">a. 早睡早起<br>
+                <input type="radio" name="q22" value="b">b. 當夜貓子<br>
+                <br>
+
+                <h4>Q23. 開會前我採用的準備方式為</h4>
+                <input type="radio" name="q23" value="a">a. 有意願參與並將於會議中積極回應<br>
+                <input type="radio" name="q23" value="b">b. 充分準備同時草擬會議的綱要<br>
+                <br>
+
+                <h4>Q24. 會議時我傾向引導與會者</h4>
+                <input type="radio" name="q24" value="a">a. 有機會表現各種情緒<br>
+                <input type="radio" name="q24" value="b">b. 以任務相關為主<br>
+                <br>
+
+                <h4>Q25. 我選擇工作時注重</h4>
+                <input type="radio" name="q25" value="a">a. 工作本身是否能激發智慧<br>
+                <input type="radio" name="q25" value="b">b. 對該組織的目標和使命是否認同<br>
+                <br>
+
+                <h4>Q26. 週末時我會</h4>
+                <input type="radio" name="q26" value="a">a. 預先規劃要做的事<br>
+                <input type="radio" name="q26" value="b">b. 屆時視情況再作決定<br>
+                <br>
+
+                <h4>Q27. 我屬於</h4>
+                <input type="radio" name="q27" value="a">a. 外顯傾向(outgoing)<br>
+                <input type="radio" name="q27" value="b">b. 深思熟慮(contemplative)<br>
+                <br>
+
+                <h4>Q28. 我比較喜歡的老闆是</h4>
+                <input type="radio" name="q28" value="a">a. 充滿新點子<br>
+                <input type="radio" name="q28" value="b">b. 講求實際<br>
+                <br>
+
+                <h3>請由以下各題所列出的兩個人格特質，找出相對比較吸引你的類型(that appeals to you more)</h3>
+                <br>
+
+                <h4>Q29. </h4>
+                <input type="radio" name="q29" value="a">a. 社交型(social)<br>
+                <input type="radio" name="q29" value="b">b. 理論型(theoretical)<br>
+                <br>
+
+                <h4>Q30. </h4>
+                <input type="radio" name="q30" value="a">a. 足智多謀型(ingenuity)<br>
+                <input type="radio" name="q30" value="b">b. 務實型(practicality)<br>
+                <br>
+
+                <h4>Q31. </h4>
+                <input type="radio" name="q31" value="a">a. 有條有理型(organized)<br>
+                <input type="radio" name="q31" value="b">b. 順應型(adaptable)<br>
+                <br>
+
+                <h4>Q32. </h4>
+                <input type="radio" name="q32" value="a">a. 活躍型(active)<br>
+                <input type="radio" name="q32" value="b">b. 專注型(concentration)<br>
+                <br>
+                <hr>
+                <input type="submit" class="button" value="提交">
+            </div>
+        </form>
+    </body>
+</html>

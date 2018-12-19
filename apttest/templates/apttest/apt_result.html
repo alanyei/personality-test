@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>APT result</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td></td>
+                <td align="center" valign="center" bgcolor="#ff9400">
+                    {% for top_result in top_l %}
+                    {{ top_result }}<br>
+                    {% endfor %}
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td align="center" valign="center" bgcolor="#ff9400">
+                    {% for left_result in left_l %}
+                    {{ left_result }}<br>
+                    {% endfor %}
+                </td>
+                <td align="center" valign="center">
+                    {% for main_result in main_l %}
+                    {{ main_result }}<br>
+                    {% endfor %}
+                </td>
+                <td align="center" valign="center" bgcolor="#ff9400">
+                    {% for right_result in right_l %}
+                    {{ right_result }}<br>
+                    {% endfor %}
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td align="center" valign="center" bgcolor="#ff9400">
+                    {% for bottom_result in bottom_l %}
+                    {{ bottom_result }}<br>
+                    {% endfor %}
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </body>
+</html>

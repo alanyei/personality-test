@@ -1,0 +1,40 @@
+.page-header {
+    background-color: #ff9400;
+    margin-top: 0;
+    padding: 20px 20px 20px 40px;
+}
+
+.page-header h1, .page-header h1 a, .page-header h1 a:visited, .page-header h1 a:active {
+    color: #ffffff;
+    font-size: 32pt;
+    font-family:Microsoft JhengHei,Heiti TC;
+    text-decoration: none;
+}
+
+.info {
+    margin-left: 15px;
+    font-family:Microsoft JhengHei,Heiti TC;
+}
+
+.questions {
+    margin-left: 15px;
+    font-family:Microsoft JhengHei,Heiti TC;
+}
+
+.question-title {
+}
+
+.question-answer {
+}
+
+.button {
+    background-color: #ff9400; /* Orange */
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 14px;
+}

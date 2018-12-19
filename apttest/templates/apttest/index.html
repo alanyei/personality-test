@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <title>Ola's blog</title>
+    </head>
+    <body>
+        <p>Hi there!</p>
+        <p>It works!</p>
+        <form method='post'>
+        {% csrf_token %}
+        {{ form }}
+            <input type="submit" value="提交">
+        </form>
+            <hr>
+            姓名：
+            <input type="text" name="name">
+            <br>
+
+            性別：
+            <input type="radio" name="sex" value="male">男
+            <input type="radio" name="sex" value="female">女
+            <br>
+
+            年齡： 
+            <input type="text" name="age">
+            <br>
+
+            EMAIL： 
+            <input type="text" name="email">
+            <br>
+    </body>
+</html>
